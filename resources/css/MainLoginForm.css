@@ -1,0 +1,153 @@
+﻿html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background-image: url("https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.5; /* Set the desired transparency level */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the pseudo-element is behind the content */
+}
+
+.box{
+  width: auto;
+  height:500px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color:transparent;
+  text-align: center;
+      box-shadow: -1px 92px 99px -62px rgba(3, 107, 255, 0.27), 0 1px 6px 0 rgba(10, 48, 255, 0.48);
+    border-radius: 25px;
+
+}
+/* Define the animation keyframes */
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-20px); }
+  50% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+.animate:hover{
+    border-radius:30px;
+    transform-style:preserve-3d;
+    transition: 0.5s ease-in-out;
+    background-color:lightsalmon;
+    color:orangered;
+}
+
+    
+@keyframes animateLetters {
+  0% {
+    letter-spacing: 0.2em;
+    color:forestgreen;
+  }
+  50% {
+    letter-spacing: 0.3em;
+    
+    color: red; /* You can add any color change here */
+  }
+  100% {
+    letter-spacing: 0.2em;
+  }
+}
+
+
+
+/* Apply the animation to the h1 element */
+.box h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  /*/* Set animation properties */
+  animation-name: animateLetters;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.box h3{
+     color: whitesmoke;
+     font-weight:400;
+     font-weight:bolder;
+     font-style: unset;
+}
+
+
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+ .flip-card {
+  background-color: transparent;
+  width: 350px;
+  height: 450px;
+  perspective: 1000px;
+  border-radius:25px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+  background-color:whitesmoke;
+
+}
+
+.flip-card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+.loginBtn:hover{
+    width:100%;
+    border-radius:35px;
+    transform:scale(0.9);
+    transition:ease-in-out 1s;
+}
+
+

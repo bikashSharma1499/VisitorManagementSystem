@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Tenant.master.cs" Inherits="Tenant_Tenant" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="../resources/css/style.css" rel="stylesheet" />
+		
+    <style>
+        .animated-text {
+  font-size: 30px;
+  animation: animateLetters 2s infinite;
+}
+
+@keyframes animateLetters {
+  0% {
+    letter-spacing: 0.2em;
+  }
+  50% {
+    letter-spacing: 0.4em;
+    transform: rotateY(360deg);
+    color: red; /* You can add any color change here */
+  }
+  100% {
+    letter-spacing: 0.2em;
+  }
+}
+  @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translateY(-15px);
+          color:orangered;        
+      }
+      50% { opacity: 1; transform: translateY(0); 
+           
+      }
+    }
+   
+    .h4-green {
+      animation: fadeInOut 2s infinite;
+    
+    }
+
+    
+</style>
+
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+  
+      	<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" style="background: #150050;">
+				<div class="custom-menu" style="z-index:10;right:-40px;top:0;">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+    
+                        
+              </button>
+        </div>
+				<div class="p-4 pt-5">
+                    <center>
+                     <img src="../resources/images/pristine-logo.png" class="rounded-circle" height="50" width="60" /></center>
+		  		<h4 style="font-weight:500;">
+                    <a href="Default_user.aspx" class="logo animated-text"> PRISTINE
+                    </a><span><h3 class="text-white fw-bolder h4-green"> G R E E N</h3></span></h4>
+                    
+	        <ul class="list-unstyled components">
+
+                
+               <li>
+                  <a href="Default.aspx">Home </a>
+	          </li>
+                 
+
+               <li>
+                  <a href="ApproveAccess.aspx">Approve Access </a>
+	          </li>
+         
+	          
+	          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Manage</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">My Profile</a>
+                </li>
+                   <li>
+                    <a href="#">Change Password</a>
+                </li>
+                                  
+              </ul>
+	          </li>
+	        
+	        </ul>
+
+             
+
+	        <div class="mb-5 mt-lg-5 pt-5 text-center">
+				
+                <asp:Button ID="Button1" OnClick="Button1_Click" CssClass="btn btn-danger text-white " runat="server" CausesValidation="false" Text="Log Out"/>
+					</div>
+
+	        <div class="footer text-center">
+	        	<p class="text-white"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				  &copy; &nbsp<script>document.write(new Date().getFullYear());</script> &nbsp Visitor Management System
+               </p>				       
+
+	        </div>
+
+	      </div>
+               
+    	</nav>
+ <div id="content">
+           <div class="container-fluid">
+            <nav class="navbar sticky-top navbar-light w-100 mx-auto mb-0 mt-0  pt-0 pb-0 align-items-end" style="background-color:#150050; z-index:-1;">
+            <p class="p-2 mb-0 mt-0" style="margin-left:10%;"><asp:Label ID="Label1" runat="server"  CssClass="text-white ml-lg-5" Text="Welcome @User"></asp:Label></p>
+                
+              </nav>
+
+
+
+
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+
+
+
+
+    </div>
+     </div>
+              </div>
+    </form>
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+       <script src="../resources/js/main.js"></script>
+    <script>
+    // Wrap each letter of the <h4> element with <span> tags
+    const h4Element = document.querySelector('.h4-green');
+    h4Element.innerHTML = h4Element.textContent.replace(/\S/g, "<span>$&</span>");
+  </script>
+</body>
+</html>

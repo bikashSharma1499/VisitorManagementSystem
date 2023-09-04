@@ -1,0 +1,141 @@
+﻿
+        .header {
+           
+         
+            padding: 5px;
+            border-bottom:groove thick;
+         
+        }
+
+        .inner-box {
+                        padding: 5px;
+
+        }
+
+        img {
+            width:100%;
+            height: 100%;
+            border-radius: 50%;
+            margin-top: 5px;
+        }
+
+        .h1 {
+            font-size: 4.5rem;
+            color: navy;
+        }
+
+        .print-title {
+            color: navy;
+        }
+
+        .custom-hr {
+            width: 98%;
+            border: none;
+            border-top: 5px solid red;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+        }
+
+        .bottom-add {
+            font-size: 2.2rem;
+            color: navy;
+        }
+
+        .bottom-add-1 {
+            margin-top: 0px;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url('resources/images/doc-logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+
+
+
+
+        /*Page Margin*/
+        @page {
+            margin: 2px;
+        }
+
+        /**Media Print*/
+        @media print {
+
+        
+  body {
+    -webkit-print-color-adjust: exact;
+  }
+
+
+
+
+            .h1 {
+                font-size: 4rem !important;
+                color: navy !important;
+            }
+
+
+            .emp {
+                color: navy !important;
+            }
+
+            .print-title {
+                font-size: 3.3rem !important;
+                color: darkblue !important;
+            }
+
+            .img {
+                width: auto !important;
+                height: auto !important;
+                border-radius: 50% !important;
+            }
+
+         
+
+            .footer {
+                position: fixed !important;
+                bottom: 0 !important;
+            }
+
+            .custom-hr {
+                width: 98% !important;
+                border: none;
+                border-top: 5px solid red;
+                margin-bottom: 10px;
+            }
+
+            .bottom-add {
+                font-size: 1.2rem !important;
+                color: navy !important;
+            }
+
+            body::before {
+                content: "" !important;
+                position: absolute !important;
+                top: 30px !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                left: 0 !important;
+                background-image: url('resources/images/doc-logo.png') !important;
+                background-repeat: no-repeat !important;
+                background-position: center !important;
+                opacity: 0.3 !important;
+            }
+        }
+    
